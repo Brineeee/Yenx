@@ -10,6 +10,7 @@ A new UI Library Made by mech#0945 / Yamete#2273
 - Slider
 - Keybind
 - Toggle
+- Notification ( not mine )
 
 - Ui can draggable for pc and mobile -
 
@@ -22,4 +23,16 @@ _G.top = Color3.fromRGB(0,0,0)
 _G.main = Color3.fromRGB(0,255,255)
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Brineeee/Yenx/main/Library"))()
+```
+
+## Source
+- you can edit source ever you want
+```html
+https://raw.githubusercontent.com/Brineeee/Yenx/main/Library
+```
+
+## Window
+- IMPORTANT! window is important to ui lib works! 
+```lua
+local win = Library:Window("Drop X Hub  |  Brookhaven")
 ```
