@@ -111,3 +111,47 @@ Tab1:Button("Update Label", function()
    up:Set("New Label") 
 end)
 ```
+## Library
+- for lazy copy this
+```lua
+_G.text = Color3.fromRGB(0,255,255)
+_G.image = Color3.fromRGB(255,255,255)
+_G.top = Color3.fromRGB(0,0,0)
+_G.main = Color3.fromRGB(0,255,255)
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Brineeee/Yenx/main/Library"))()
+
+local win = Library:Window("Yenx")
+
+local Tab1 = win:Tab("Home")
+    
+Tab1:addButton("Example Button", function() 
+    
+end) 
+
+local New = Tab1:addLabel("Example Label")
+
+Tab1:addButton("Replace Label", function()
+    New:Set("New Label") 
+end) 
+
+Tab1:addButton("Notification", function() 
+Library:Notification("Title", "Description",  9) 
+end) 
+
+Tab1:addToggle("Toggle", function() 
+    
+end) 
+
+Tab1:addTextbox("Textbox", "Type Here", function()
+    
+end)
+
+Tab1:addKeybind("Keybind", Enum.KeyCode.RightControl, function()
+    
+end) 
+
+Tab1:addSlider("Slider", 1, 9, function() 
+    
+end) 
+```
