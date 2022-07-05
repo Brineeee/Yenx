@@ -54,7 +54,7 @@ local Tab1 = win:Tab("Home")
 ## Button
 - add button on tab
 ```lua
-Tab1:addButton("Button", function() 
+Tab1:Button("Button", function() 
    print("Clicked!") 
 end) 
 ```
@@ -62,7 +62,7 @@ end)
 ## Toggle
 - add toggle on tab
 ```lua
-Tab1:addToggle("Toggle", false, function() -- remove false and [ , ] if toggle doesn't work
+Tab1:Toggle("Toggle", false, function() -- remove false and [ , ] if toggle doesn't work
 
 end) 
 ```
@@ -70,7 +70,7 @@ end)
 ## Keybind
 - add keybind on tab
 ```lua
-Tab1:addKeybind("Keybind", Enum.KeyCode.Z, function() -- Example : Remove Z near of KeyCode and Replace it with F. 
+Tab1:Keybind("Keybind", Enum.KeyCode.Z, function() -- Example : Remove Z near of KeyCode and Replace it with F. 
 
 end) 
 ```
@@ -81,7 +81,7 @@ end)
 local list = {
    "Option 1", "Option 2", "Option 3"
 } 
-Tab1:addDropdown("Dropdown", list, function() 
+Tab1:Dropdown("Dropdown", list, function() 
 
 end) 
 ```
@@ -101,7 +101,7 @@ end)
 ## Textbox
 - add textbox on tab
 ```lua
-Tab1:addTextbox("Textbox", "Type Here", function() 
+Tab1:Textbox("Textbox", "Type Here", function() 
 
 end) 
 ```
@@ -122,44 +122,52 @@ end)
 ## Library
 - for lazy copy this
 ```lua
-_G.text = Color3.fromRGB(0,255,255)
-_G.image = Color3.fromRGB(255,255,255)
+_G.text = Color3.fromRGB(120,255,0)
+_G.image = Color3.fromRGB(120,255,0)
 _G.top = Color3.fromRGB(0,0,0)
-_G.main = Color3.fromRGB(0,255,255)
+_G.main = Color3.fromRGB(120,255,0)
+_G.title = Color3.fromRGB(120,255,0)
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Brineeee/Yenx/main/New"))()
 
 local win = Library:Window("Yenx")
-
+TweenTitle("Y", "Ye", "Yex", "Yenx", "YenxH", "YenxHu", "YenxHub") 
 local Tab1 = win:Tab("Home")
     
-Tab1:addButton("Example Button", function() 
+Tab1:Button("Example Button", function() 
     
 end) 
 
-local New = Tab1:addLabel("Example Label")
+local New = Tab1:Label("Example Label")
 
-Tab1:addButton("Replace Label", function()
+Tab1:Button("Replace Label", function()
     New:Set("New Label") 
 end) 
 
-Tab1:addButton("Notification", function() 
+Tab1:Button("Notification", function() 
 Library:Notification("Title", "Description",  9) 
 end) 
 
-Tab1:addToggle("Toggle", function() 
+Tab1:Toggle("Toggle", function() 
     
 end) 
 
-Tab1:addTextbox("Textbox", "Type Here", function()
+Tab1:Textbox("Textbox", "Type Here", function()
     
 end)
 
-Tab1:addKeybind("Keybind", Enum.KeyCode.RightControl, function()
+local List = {
+    "Option1", "Option2", "Option3"
+}
+Tab1:Dropdown("Textbox", List, function()
+    
+end)
+
+Tab1:Keybind("Keybind", Enum.KeyCode.RightControl, function()
     
 end) 
 
-Tab1:addSlider("Slider", 1, 9, function() 
+Tab1:Slider("Slider", 1, 9, function() 
     
 end) 
 ```
