@@ -3,6 +3,12 @@ A new UI Library Made by mech#0945 / Yamete#2273
 - Very similar to Venyx UI
 - Date Release = June 29 2022
 
+## Updates
+- Updated = July 5 2022
+
+### New Features! 
+- Tween Title ( Like [ Y, Ye, Yen ] )
+
 ## Features
 - Button
 - Label ( with Refreshable )
@@ -17,24 +23,26 @@ A new UI Library Made by mech#0945 / Yamete#2273
 ## Colors
 - allows you to change ui colors
 ```lua
-_G.text = Color3.fromRGB(0,255,255)
-_G.image = Color3.fromRGB(255,255,255)
+_G.text = Color3.fromRGB(120,255,0)
+_G.image = Color3.fromRGB(120,255,0)
 _G.top = Color3.fromRGB(0,0,0)
-_G.main = Color3.fromRGB(0,255,255)
+_G.main = Color3.fromRGB(120,255,0)
+_G.title = Color3.fromRGB(120,255,0)
 
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Brineeee/Yenx/main/Library"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Brineeee/Yenx/main/New"))()
 ```
 
 ## Source
 - you can edit source ever you want
 ```html
-https://raw.githubusercontent.com/Brineeee/Yenx/main/Library
+https://raw.githubusercontent.com/Brineeee/Yenx/main/New
 ```
 
-## Window
+## Window & Tween Title
 - IMPORTANT! window is important to ui lib works! 
 ```lua
 local win = Library:Window("Yenx")
+TweenTitle("Y", "Ye", "Yex", "Yenx", "YenxH", "YenxHu", "YenxHub") 
 ```
 
 ## Tab
@@ -119,7 +127,7 @@ _G.image = Color3.fromRGB(255,255,255)
 _G.top = Color3.fromRGB(0,0,0)
 _G.main = Color3.fromRGB(0,255,255)
 
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Brineeee/Yenx/main/Library"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Brineeee/Yenx/main/New"))()
 
 local win = Library:Window("Yenx")
 
