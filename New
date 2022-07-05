@@ -12,9 +12,10 @@ local Library = {}
 
 local color = { 
     text = _G.text or Color3.fromRGB(255,255,255), 
-    image = _G.image or Color3.fromRGB(255, 255,255), 
-    top = _G.top or Color3.fromRGB(255,255,255),
-    main = _G.main or Color3.fromRGB(255,255,255)
+    image = _G.image or Color3.fromRGB(255,255,255), 
+    top = _G.top or Color3.fromRGB(0,0,0),
+    main = _G.main or Color3.fromRGB(255,255,255), 
+    title = _G.title or Color3.fromRGB(255,255,255) 
 }
 
 function Library:Notification(text, desc, timer) 
@@ -118,7 +119,7 @@ function Library:Window(title)
     GameName.Size = UDim2.new(0, 165, 0, 22)
     GameName.Font = Enum.Font.Gotham
     GameName.Text = title or "Game Name"
-    GameName.TextColor3 = color.text
+    GameName.TextColor3 = color.title
     GameName.TextSize = 14.000
     GameName.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -155,7 +156,49 @@ function Library:Window(title)
     Cover.BorderSizePixel = 0
     Cover.Position = UDim2.new(1, 0, 0.5, 0)
     Cover.Size = UDim2.new(0, 5, 1, 0)
-                
+               
+function TweenTitle(t, te, tex, text, texth, texthu, texthub)
+local function Ero()
+	local script = Instance.new('Script', GameName)
+
+	while true do
+	script.Parent.Text = t
+	wait(.5)
+	script.Parent.Text = te
+	wait(.5)
+	script.Parent.Text = tex
+	wait(.5)
+	script.Parent.Text = text
+	wait(.5)
+	script.Parent.Text = texth
+	wait(.5)
+	script.Parent.Text = texthu
+	wait(.5)
+	script.Parent.Text = texthub
+	wait(.3)
+	script.Parent.Text = " "
+	wait(.3)
+	script.Parent.Text = texthub
+	wait(.5)
+	script.Parent.Text = texthu
+	wait(.5)
+	script.Parent.Text = texth
+	wait(.5)
+	script.Parent.Text = text
+	wait(.5)
+	script.Parent.Text = tex
+	wait(.5)
+	script.Parent.Text = te
+	wait(.5)
+	script.Parent.Text = t
+	wait(.5)
+	script.Parent.Text = " "
+	wait(.3)
+	end 
+end
+coroutine.wrap(Ero)()
+end
+
     local Tabs = {}
     function Tabs:Tab(title, img)
         local UIListLayout = Instance.new('UIListLayout')
@@ -210,15 +253,15 @@ function Library:Window(title)
             for _,v in next, TabsContainer:GetChildren() do
                 if v.Name == 'TabButton' then
                     TweenService:Create(v, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BackgroundTransparency = 1}):Play()
-                    TweenService:Create(v, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextColor3 = Color3.fromRGB(72,72,72)}):Play()
+                    TweenService:Create(v, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextColor3 = Color3.fromRGB(70,70,70)}):Play()
                 TweenService:Create(TabButton, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BackgroundTransparency = 0.6}):Play()
-                TweenService:Create(TabButton, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextColor3 = Color3.fromRGB(255,255,255)}):Play()
+                TweenService:Create(TabButton, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextColor3 = color.main}):Play()
                 end
             end
         end)
                 
         local TabFunctions = {}
-        function TabFunctions:addButton(title, callback)
+        function TabFunctions:Button(title, callback)
             local Button = Instance.new("TextButton")
 
             callback = callback or function() end
@@ -236,11 +279,13 @@ function Library:Window(title)
             Button.TextSize = 14.000
 
             Button.MouseEnter:Connect(function()
-                TweenService:Create(Button, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextSize = 10.00}):Play()
+                TweenService:Create(Button, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextSize = 11}):Play()
+                TweenService:Create(Button, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(50,50,50)}):Play()
             end)
 
             Button.MouseLeave:Connect(function()
-                TweenService:Create(Button, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextSize = 14.00}):Play()
+                TweenService:Create(Button, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextSize = 14}):Play()
+                TweenService:Create(Button, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(10,10,10)}):Play()
             end)
 
             Button.MouseButton1Click:Connect(function()
@@ -248,7 +293,7 @@ function Library:Window(title)
             end)
         end
 
-        function TabFunctions:addKeybind(text, keypreset, callback)
+        function TabFunctions:Keybind(text, keypreset, callback)
             local binding = false
             callback = callback or function() end
             local Key = keypreset.Name
@@ -312,7 +357,7 @@ function Library:Window(title)
             end)
         end
 
-            function TabFunctions:addToggle(toggletitle, togglecallback)
+            function TabFunctions:Toggle(toggletitle, togglecallback)
                 local ToggleHolder = Instance.new("Frame")
                 local ToggleImage = Instance.new("ImageLabel")
                 local ToggleTitle = Instance.new("TextLabel")
@@ -425,7 +470,7 @@ function Library:Window(title)
                 
             end
 
-            function TabFunctions:addSlider(slidertitle, minvalue, maxvalue, callback)
+            function TabFunctions:Slider(slidertitle, minvalue, maxvalue, callback)
                 local SliderHolder = Instance.new("Frame")
                 local SliderHolderUICorner = Instance.new("UICorner")
                 local SliderImage = Instance.new("ImageLabel")
@@ -552,7 +597,7 @@ function Library:Window(title)
                 end)
             end
 
-            function TabFunctions:addTextbox(textboxtitle, textboxplaceholdertitle,textboxcallback)
+            function TabFunctions:Textbox(textboxtitle, textboxplaceholdertitle,textboxcallback)
                 local TextBoxToggle = Instance.new("Frame")
                 local TextBoxImage = Instance.new("ImageLabel")
                 local TextBoxTitle = Instance.new("TextLabel")
@@ -606,7 +651,7 @@ function Library:Window(title)
                     end)
                 end)
             end
-        function TabFunctions:addDropdown(title, list, callback)
+        function TabFunctions:Dropdown(title, list, callback)
             title = title or "nil"
             list = list or {}
             callback = callback or function() end
@@ -835,7 +880,7 @@ function Library:Window(title)
             end
        end
 
-        function TabFunctions:addLabel(text) 
+        function TabFunctions:Label(text) 
             local LabelF = {}
 
             local btnFrame1 = Instance.new("TextButton")
