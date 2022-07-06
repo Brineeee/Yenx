@@ -14,7 +14,6 @@ A new UI Library Made by mech#0945 / Yamete#2273
 - Slider
 - Keybind
 - Toggle
-- Notification ( not mine )
 
 - Ui can draggable for pc and mobile - 
 
@@ -28,17 +27,33 @@ A new UI Library Made by mech#0945 / Yamete#2273
 - NEW! Style of Toggle! 
 - Change TweenTitle > Tween_Text
 
+### v1.4 BIGGEST!! Update
+- Return of Notification but new design! 
+- Return of Change Color of Gui
+- NEW! Style of Slider and Toggle! 
+- Fixed Bug
+- Customize Shadow Color 
+- Remove Tween Title -( Most bug 
+- Added Seperator 
+- Added Line
+
+### Announcement > v1.4 
+Soon Colorpicker will add on gui! 
+We will fixed Tween Title soon! 
+
+## Color
+- added new color
+
 ## Library
 - put it on your script
 ```lua
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Brineeee/Yenx/main/Lib"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Brineeee/Yenx/main/LibraryUI"))()
 ```
 
 ## Window & Tween Title
 - IMPORTANT! window is important to ui lib works! 
 ```lua
 local win = Library:Window("Yenx")
-Tween_Text("Y", "Ye", "Yex", "Yenx", "YenxH", "YenxHu", "YenxHub") 
 ```
 
 ## Tab
@@ -46,6 +61,21 @@ Tween_Text("Y", "Ye", "Yex", "Yenx", "YenxH", "YenxHu", "YenxHub")
 ```lua
 local Tab1 = win:Tab("Home")
 ```
+
+## Notification 
+```lua
+Library:Notification("Hello", "Hi! ", 2)
+```
+
+## Seperator 
+```lua
+Tab1:Seperator("Tabs")
+```
+
+## Line 
+```lua
+Tab1:Line()
+``` 
 
 ## Button
 - add button on tab
@@ -106,14 +136,14 @@ end)
 ## Library
 - for lazy copy this
 ```lua
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Brineeee/Yenx/main/Lib"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Brineeee/Yenx/main/LibraryUI"))()
 
 local win = Library:Window("Yenx")
-Tween_Text("Y", "Ye", "Yex", "Yenx", "YenxH", "YenxHu", "YenxHub") 
 local Tab1 = win:Tab("Home")
     
+Tab1:Seperator("Tab") 
 Tab1:Button("Example Button", function() 
-    
+    Library:Notification("Hello", "Hi! ", 2)
 end) 
 
 local New = Tab1:Label("Example Label")
@@ -144,4 +174,5 @@ end)
 Tab1:Slider("Slider", 1, 9, function() 
     
 end) 
+Tab1:Line() 
 ```
