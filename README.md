@@ -171,7 +171,7 @@ Tab1:Keybind("Keybind", Enum.KeyCode.RightControl, function()
     
 end) 
 
-Tab1:Slider("Slider", 1, 9, function() 
+Tab1:Slider("Slider", 1, 9, 5,function() 
     
 end) 
 Tab1:Line() 
