@@ -1,15 +1,13 @@
 # Yenx UI Library
 A new UI Library Made by mech#0945 / Yamete#2273 
-- Very similar to Venyx UI
 - Date Release = June 29 2022
 
 ## Updates
-- Updated = July 5 2022
+- Updated = June 29 2022
+- Last Update = July 6 2022
 
-### New Features! 
-- Tween Title ( Like [ Y, Ye, Yen ] )
-
-## Features
+### v1.0 Update
+#### Release of Yenx Library! 
 - Button
 - Label ( with Refreshable )
 - Dropdown
@@ -18,24 +16,21 @@ A new UI Library Made by mech#0945 / Yamete#2273
 - Toggle
 - Notification ( not mine )
 
-- Ui can draggable for pc and mobile -
+- Ui can draggable for pc and mobile - 
 
-## Colors
-- allows you to change ui colors
+### v1.2 Update
+- Tween Title ( Like [ Y, Ye, Yen ] ) 
+
+### v1.3 Update
+- Remove can change color
+- Remove notifications 
+- changeable shadow color
+- NEW! Style of Toggle! 
+
+## Library
+- put it on your script
 ```lua
-_G.text = Color3.fromRGB(120,255,0)
-_G.image = Color3.fromRGB(120,255,0)
-_G.top = Color3.fromRGB(0,0,0)
-_G.main = Color3.fromRGB(120,255,0)
-_G.title = Color3.fromRGB(120,255,0)
-
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Brineeee/Yenx/main/New"))()
-```
-
-## Source
-- you can edit source ever you want
-```html
-https://raw.githubusercontent.com/Brineeee/Yenx/main/New
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Brineeee/Yenx/main/Lib"))()
 ```
 
 ## Window & Tween Title
@@ -86,18 +81,6 @@ Tab1:Dropdown("Dropdown", list, function()
 end) 
 ```
 
-## Notification
-- With No Button
-```lua
-Library:Notification("Title", "Description",  9) 
-```
-- With Button
-```lua
-Tab1:Button("Click to Notify", function() 
-Library:Notification("Title", "Description",  9)  
-end) 
-```
-
 ## Textbox
 - add textbox on tab
 ```lua
@@ -122,13 +105,7 @@ end)
 ## Library
 - for lazy copy this
 ```lua
-_G.text = Color3.fromRGB(120,255,0)
-_G.image = Color3.fromRGB(120,255,0)
-_G.top = Color3.fromRGB(0,0,0)
-_G.main = Color3.fromRGB(120,255,0)
-_G.title = Color3.fromRGB(120,255,0)
-
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Brineeee/Yenx/main/New"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Brineeee/Yenx/main/Lib"))()
 
 local win = Library:Window("Yenx")
 TweenTitle("Y", "Ye", "Yex", "Yenx", "YenxH", "YenxHu", "YenxHub") 
@@ -142,10 +119,6 @@ local New = Tab1:Label("Example Label")
 
 Tab1:Button("Replace Label", function()
     New:Set("New Label") 
-end) 
-
-Tab1:Button("Notification", function() 
-Library:Notification("Title", "Description",  9) 
 end) 
 
 Tab1:Toggle("Toggle", function() 
