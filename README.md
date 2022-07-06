@@ -26,6 +26,7 @@ A new UI Library Made by mech#0945 / Yamete#2273
 - Remove notifications 
 - changeable shadow color
 - NEW! Style of Toggle! 
+- Change TweenTitle > Tween_Text
 
 ## Library
 - put it on your script
@@ -37,7 +38,7 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Brine
 - IMPORTANT! window is important to ui lib works! 
 ```lua
 local win = Library:Window("Yenx")
-TweenTitle("Y", "Ye", "Yex", "Yenx", "YenxH", "YenxHu", "YenxHub") 
+Tween_Text("Y", "Ye", "Yex", "Yenx", "YenxH", "YenxHu", "YenxHub") 
 ```
 
 ## Tab
@@ -108,7 +109,7 @@ end)
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Brineeee/Yenx/main/Lib"))()
 
 local win = Library:Window("Yenx")
-TweenTitle("Y", "Ye", "Yex", "Yenx", "YenxH", "YenxHu", "YenxHub") 
+Tween_Text("Y", "Ye", "Yex", "Yenx", "YenxH", "YenxHu", "YenxHub") 
 local Tab1 = win:Tab("Home")
     
 Tab1:Button("Example Button", function() 
