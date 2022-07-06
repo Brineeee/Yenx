@@ -1,42 +1,40 @@
-do
- YenxUI = game:GetService("CoreGui"):FindFirstChild("Yenx")
-  if YenxUI then
-   YenxUI:Destroy() 
-   end
-end
+local Mech0945 = pcall -- New Destroy Duplicate Functions
+Mech0945(function()
+    game:GetService("CoreGui"):FindFirstChild("LibraryIS.Name"):Destroy()
+end)
+
+local LibraryIS = { 
+    Size = UDim2.new(0, 480, 0, 400), 
+    Core = game.CoreGui, 
+    Drag = true, 
+    ImageColor = Color3.fromRGB(120,255,0), 
+    ShadowColor = Color3.fromRGB(120,255,0), 
+    TitleColor = Color3.fromRGB(120,255,0), 
+    ShadowVisible = true, 
+    FunctionColor = Color3.fromRGB(120,255,0)
+}
+
+local color = {
+   main = LibraryIS.FunctionColor, 
+   text = LibraryIS.FunctionColor, 
+   image = LibraryIS.ImageColor
+}
 
 local TweenService = game:GetService("TweenService")
 local UserInputService = game:GetService("UserInputService")
     
 local Library = {}
-
-local color = { 
-    text = _G.text or Color3.fromRGB(255,255,255), 
-    image = _G.image or Color3.fromRGB(255,255,255), 
-    top = _G.top or Color3.fromRGB(0,0,0),
-    main = _G.main or Color3.fromRGB(255,255,255), 
-    title = _G.title or Color3.fromRGB(255,255,255) 
-}
-
-function Library:Notification(text, desc, timer) 
-local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/Brineeee/EastHub/main/NotificationModules"))()
-local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Brineeee/EastHub/main/Notification"))()
-Notification:Notify(
-    {Title = text, Description = desc},
-    {OutlineColor = color.main,Time = timer, Type = "default"}
-)
-end
-
 function Library:Window(title)
-    local Yenx = Instance.new("ScreenGui")
+    local ui = Instance.new("ScreenGui")
     local Main = Instance.new("Frame")
     local Shadow = Instance.new("ImageLabel")
-    local tabs = Instance.new("Frame") 
+    local tabs = Instance.new("Frame")
     local Cover = Instance.new("Frame")
     local TabsList = Instance.new("UIListLayout")
     local Top = Instance.new("Frame")
     local Cover_2 = Instance.new("Frame")
     local Line = Instance.new("Frame")
+    local Close = Instance.new("ImageButton")
     local GameName = Instance.new("TextLabel")
     local Pages = Instance.new("Frame")
     local TabsContainer = Instance.new("Frame")
@@ -46,19 +44,19 @@ function Library:Window(title)
     local Cover = Instance.new("Frame")
     
 
-    Yenx.Name = "Yenx"
-    Yenx.Parent = game.CoreGui
-    Yenx.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    ui.Name = "LibraryIS.Name" 
+    ui.Parent = LibraryIS.Core
+    ui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
     Main.Name = "Main"
-    Main.Parent = Yenx
+    Main.Parent = ui
     Main.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
     Main.BorderSizePixel = 0
-    Main.Position = UDim2.new(0, 150, 0, 1)
-    Main.Size = UDim2.new(0, 480, 0, 400)
+    Main.Position = UDim2.new(0, 147,0, 10)
+    Main.Size = LibraryIS.Size
     Main.Active = true
     Main.Selectable = true
-    Main.Draggable = true
+    Main.Draggable = LibraryIS.Drag
 
     Shadow.Name = "Shadow"
     Shadow.Parent = Main
@@ -69,13 +67,14 @@ function Library:Window(title)
     Shadow.Size = UDim2.new(1, 30, 1, 30)
     Shadow.ZIndex = 0
     Shadow.Image = "rbxassetid://5554236805"
-    Shadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
+    Shadow.ImageColor3 = LibraryIS.ShadowColor
     Shadow.ScaleType = Enum.ScaleType.Slice
     Shadow.SliceCenter = Rect.new(23, 23, 277, 277)
+    Shadow.Visible = LibraryIS.ShadowVisible
 
     tabs.Name = "tabs"
     tabs.Parent = Main
-    tabs.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+    tabs.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
     tabs.BorderSizePixel = 0
     tabs.Position = UDim2.new(0, 0, 0, 35)
     tabs.Size = UDim2.new(0, 122, 1, -35)
@@ -83,24 +82,24 @@ function Library:Window(title)
     Cover.Name = "Cover"
     Cover.Parent = tabs
     Cover.AnchorPoint = Vector2.new(1, 0.5)
-    Cover.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+    Cover.BackgroundColor3 = Color3.fromRGB(13, 13, 13)
     Cover.BorderSizePixel = 0
     Cover.Position = UDim2.new(1, 0, 0.5, 0)
     Cover.Size = UDim2.new(0, 5, 1, 0)
-    
+
     Top.Name = "Top"
     Top.Parent = Main
-    Top.BackgroundColor3 = color.top
+    Top.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
     Top.BorderSizePixel = 0
     Top.Size = UDim2.new(1, 0, 0, 34)
 
     Cover_2.Name = "Cover"
     Cover_2.Parent = Top
     Cover_2.AnchorPoint = Vector2.new(0.5, 1)
-    Cover_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    Cover_2.BackgroundColor3 = Color3.fromRGB(14, 14, 14)
     Cover_2.BorderSizePixel = 0
     Cover_2.Position = UDim2.new(0.5, 0, 1, 0)
-    Cover_2.Size = UDim2.new(1, 0, 0, 4)
+    Cover_2.Size = UDim2.new(0, 0, 0, 0)
 
     Line.Name = "Line"
     Line.Parent = Top
@@ -109,7 +108,22 @@ function Library:Window(title)
     Line.BackgroundTransparency = 0.920
     Line.Position = UDim2.new(0.5, 0, 1, 1)
     Line.Size = UDim2.new(1, 0, 0, 1)
-
+    
+    
+    Close.Name = "Close"
+    Close.Parent = Top
+    Close.AnchorPoint = Vector2.new(1, 0.5)
+    Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Close.BackgroundTransparency = 1.000
+    Close.Position = UDim2.new(1, -6, 0.5, 0)
+    Close.Size = UDim2.new(0, 20, 0, 20)
+    Close.Image = "http://www.roblox.com/asset/?id=7755372427"
+    Close.ImageColor3 = LibraryIS.ImageColor
+    Close.ScaleType = Enum.ScaleType.Crop
+    Close.MouseButton1Click:connect(function()
+        ui:Destroy() 
+    end)
+    
     GameName.Name = "GameName"
     GameName.Parent = Top 
     GameName.AnchorPoint = Vector2.new(0, 0.5)
@@ -119,7 +133,7 @@ function Library:Window(title)
     GameName.Size = UDim2.new(0, 165, 0, 22)
     GameName.Font = Enum.Font.Gotham
     GameName.Text = title or "Game Name"
-    GameName.TextColor3 = color.title
+    GameName.TextColor3 = LibraryIS.TitleColor
     GameName.TextSize = 14.000
     GameName.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -132,7 +146,7 @@ function Library:Window(title)
     
     tabs.Name = "tabs"
     tabs.Parent = Main
-    tabs.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+    tabs.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
     tabs.BorderSizePixel = 0
     tabs.Position = UDim2.new(0, 0, 0, 35)
     tabs.Size = UDim2.new(0, 122, 1, -35)
@@ -152,12 +166,12 @@ function Library:Window(title)
     Cover.Name = "Cover"
     Cover.Parent = tabs
     Cover.AnchorPoint = Vector2.new(1, 0.5)
-    Cover.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+    Cover.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
     Cover.BorderSizePixel = 0
     Cover.Position = UDim2.new(1, 0, 0.5, 0)
     Cover.Size = UDim2.new(0, 5, 1, 0)
-               
-function TweenTitle(t, te, tex, text, texth, texthu, texthub)
+    
+function Tween_Text(t, te, tex, text, texth, texthu, texthub)
 local function Ero()
 	local script = Instance.new('Script', GameName)
 
@@ -200,23 +214,23 @@ coroutine.wrap(Ero)()
 end
 
     local Tabs = {}
-    function Tabs:Tab(title, img)
+    function Tabs:Tab(title)
         local UIListLayout = Instance.new('UIListLayout')
-        local UIPadding = Instance.new("UIPadding")
         local Page = Instance.new("ScrollingFrame")
-        local UICorner = Instance.new("UICorner")
         local TabButton = Instance.new("TextButton")
+        
+        
         
         TabButton.Name = "TabButton"
         TabButton.Parent = TabsContainer
-        TabButton.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-        TabButton.BorderColor3 = Color3.fromRGB(20,20,20)
+        TabButton.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+        TabButton.BorderSizePixel = 0
         TabButton.BackgroundTransparency = 1
         TabButton.Size = UDim2.new(1, -12, 0, 30)
         TabButton.AutoButtonColor = false
         TabButton.Font = Enum.Font.Gotham
-        TabButton.Text = title or 'Home'
-        TabButton.TextColor3 = color.text
+        TabButton.Text = "# ".. title
+        TabButton.TextColor3 = Color3.fromRGB(150,150,150)
         TabButton.TextSize = 14.000
         
         Page.Name = "Page"
@@ -229,15 +243,12 @@ end
         Page.Size = UDim2.new(1, 0, 1, 0)
         Page.CanvasPosition = Vector2.new(0, 0)
         Page.ScrollBarThickness = 2
-        Page.ScrollBarImageColor3 = Color3.fromRGB(30, 30, 30)
+        Page.ScrollBarImageColor3 = Color3.fromRGB(255, 24, 101)
         
         UIListLayout.Parent = Page
         UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
         UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-        UIListLayout.Padding = UDim.new(0, 6) 
-        
-        UIPadding.Parent = Page
-        UIPadding.PaddingTop = UDim.new(0, 5)
+        UIListLayout.Padding = UDim.new(0, 6)
         
         UIListLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
         Page.CanvasSize = UDim2.new(0,0,0,UIListLayout.AbsoluteContentSize.Y) 
@@ -253,14 +264,77 @@ end
             for _,v in next, TabsContainer:GetChildren() do
                 if v.Name == 'TabButton' then
                     TweenService:Create(v, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BackgroundTransparency = 1}):Play()
-                    TweenService:Create(v, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextColor3 = Color3.fromRGB(70,70,70)}):Play()
+                    TweenService:Create(v, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextColor3 = Color3.fromRGB(72,72,72)}):Play()
                 TweenService:Create(TabButton, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BackgroundTransparency = 0.6}):Play()
-                TweenService:Create(TabButton, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextColor3 = color.main}):Play()
+                TweenService:Create(TabButton, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextColor3 = Color3.fromRGB(255,255,255)}):Play()
                 end
             end
         end)
                 
         local TabFunctions = {}
+       	function TabFunctions:Toggle(titlee, callback)
+            local Toggle = Instance.new("TextButton")
+            local Title = Instance.new("TextLabel")
+            local Toggle_2 = Instance.new("Frame")
+            local Stroke = Instance.new('UIStroke')
+            value = true and false
+
+            Toggle.Name = "Toggle"
+            Toggle.Parent = Page
+            Toggle.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+            Toggle.BorderSizePixel = 0
+            Toggle.Size = UDim2.new(1, -6, 0, 34)
+            Toggle.AutoButtonColor = false
+            Toggle.Font = Enum.Font.SourceSans
+            Toggle.Text = ""
+            Toggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+            Toggle.TextSize = 14.000
+            
+            Title.Name = "Title"
+            Title.Parent = Toggle
+            Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            Title.BackgroundTransparency = 1.000
+            Title.Position = UDim2.new(0, 8, 0, 0)
+            Title.Size = UDim2.new(1, -6, 1, 0)
+            Title.Font = Enum.Font.Gotham
+            Title.Text = titlee
+            Title.TextColor3 = LibraryIS.FunctionColor
+            Title.TextSize = 14.000
+            Title.TextXAlignment = Enum.TextXAlignment.Left
+            
+            Toggle_2.Name = "Toggle"
+            Toggle_2.Parent = Toggle
+            Toggle_2.AnchorPoint = Vector2.new(1, 0.5)
+            Toggle_2.BackgroundColor3 = LibraryIS.FunctionColor
+            Toggle_2.BackgroundTransparency = 1.000
+            Toggle_2.BorderSizePixel = 0
+            Toggle_2.Position = UDim2.new(1, -8, 0.5, 0)
+            Toggle_2.Size = UDim2.new(0, 14, 0, 14)
+            
+            Stroke.Parent = Toggle_2
+            Stroke.LineJoinMode = Enum.LineJoinMode.Round
+            Stroke.Thickness = 2
+            Stroke.Color = LibraryIS.FunctionColor
+
+            local toggled = value
+            if toggled then
+            TweenService:Create(Toggle_2, TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{BackgroundTransparency = 0}, true):Play()
+                callback(toggled)
+            end
+            
+            
+            Toggle.MouseButton1Click:Connect(function()
+                if toggled then  
+                    toggled = false 
+                    TweenService:Create(Toggle_2, TweenInfo.new(.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{BackgroundTransparency = 1}, true):Play()
+                else
+                    toggled = true
+                    TweenService:Create(Toggle_2, TweenInfo.new(.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{BackgroundTransparency = 0}, true):Play()
+                end
+                callback(toggled)
+            end)
+        end
+
         function TabFunctions:Button(title, callback)
             local Button = Instance.new("TextButton")
 
@@ -356,119 +430,6 @@ end
                 end
             end)
         end
-
-            function TabFunctions:Toggle(toggletitle, togglecallback)
-                local ToggleHolder = Instance.new("Frame")
-                local ToggleImage = Instance.new("ImageLabel")
-                local ToggleTitle = Instance.new("TextLabel")
-                local ToggleOut = Instance.new("ImageLabel")
-                local ToggleOutUICorner = Instance.new("UICorner")
-                local ToggleIn = Instance.new("ImageLabel")
-                local ToggleInUICorner = Instance.new("UICorner")
-                local ToggleHolderButton = Instance.new("TextButton")
-                
-                --Properties:
-                
-                ToggleHolder.Name = toggletitle or "ToggleHolder"
-                ToggleHolder.Parent = Page
-                ToggleHolder.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
-                ToggleHolder.BorderSizePixel = 0
-                ToggleHolder.Size = UDim2.new(1, -6, 0, 34)
-                
-                ToggleImage.Name = "ToggleImage"
-                ToggleImage.Parent = ToggleHolder
-                ToggleImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-                ToggleImage.BackgroundTransparency = 1.000
-                ToggleImage.BorderSizePixel = 0
-                ToggleImage.Position = UDim2.new(0, 5, 0, 3)
-                ToggleImage.Size = UDim2.new(0, 18, 0, 18)
-                ToggleImage.Image = ""
-                ToggleImage.ImageColor3 = Color3.fromRGB(200, 200, 200)
-                
-                ToggleTitle.Name = "ToggleTitle"
-                ToggleTitle.Parent = ToggleHolder
-                ToggleTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-                ToggleTitle.BackgroundTransparency = 1.000
-                ToggleTitle.BorderSizePixel = 0
-                ToggleTitle.Position = UDim2.new(0, 10, 0, 5)
-                ToggleTitle.Size = UDim2.new(0, 250, 0, 25)
-                ToggleTitle.Font = Enum.Font.Gotham
-                ToggleTitle.Text = toggletitle or "Toggle | Toggle Me !"
-                ToggleTitle.TextColor3 = color.text
-                ToggleTitle.TextSize = 14.000
-                ToggleTitle.TextXAlignment = Enum.TextXAlignment.Left
-                
-                ToggleOut.Name = "ToggleOut"
-                ToggleOut.Parent = ToggleHolder
-                ToggleOut.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-                ToggleOut.Position = UDim2.new(0, 290, 0,7)
-                ToggleOut.Size = UDim2.new(0, 35, 0, 20)
-                ToggleOut.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
-                ToggleOut.ImageTransparency = 1.000
-                
-                ToggleOutUICorner.CornerRadius = UDim.new(0, 1)
-                ToggleOutUICorner.Name = "ToggleOutUICorner"
-                ToggleOutUICorner.Parent = ToggleOut
-                
-                ToggleIn.Name = "ToggleIn"
-                ToggleIn.Parent = ToggleOut
-                ToggleIn.BackgroundColor3 = color.main
-                ToggleIn.Position = UDim2.new(0, 2, 0, 1)
-                ToggleIn.Size = UDim2.new(0, 13, 0, 19)
-                ToggleIn.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
-                ToggleIn.ImageTransparency = 1.000
-                
-                ToggleInUICorner.CornerRadius = UDim.new(0, 1)
-                ToggleInUICorner.Name = "ToggleInUICorner"
-                ToggleInUICorner.Parent = ToggleIn
-                
-                ToggleHolderButton.Name = "ToggleHolderButton"
-                ToggleHolderButton.Parent = ToggleHolder
-                ToggleHolderButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-                ToggleHolderButton.BackgroundTransparency = 1.000
-                ToggleHolderButton.BorderSizePixel = 0
-                ToggleHolderButton.Size = UDim2.new(0, 280, 0, 25)
-                ToggleHolderButton.ZIndex = 2
-                ToggleHolderButton.Font = Enum.Font.SourceSans
-                ToggleHolderButton.Text = ""
-                ToggleHolderButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-                ToggleHolderButton.TextSize = 14.000
-
-                -- Don't Touch This Script Or It Will Mess Up --
-
-                local toggled = false
-                ToggleHolderButton.MouseEnter:Connect(function()
-                    TweenService:Create(ToggleTitle, TweenInfo.new(0.12, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {TextColor3 = color.text}):Play()
-                    TweenService:Create(ToggleImage, TweenInfo.new(0.12, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {ImageColor3 = color.image}):Play()
-                end)
-                ToggleHolderButton.MouseLeave:Connect(function()
-                    TweenService:Create(ToggleTitle, TweenInfo.new(0.12, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {TextColor3 = color.image}):Play()
-                    TweenService:Create(ToggleImage, TweenInfo.new(0.12, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {ImageColor3 = color.image}):Play()
-                    TweenService:Create(ToggleHolder, TweenInfo.new(0.12, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {Size = UDim2.new(1, -6, 0, 34)}):Play()
-                end)
-                ToggleHolderButton.MouseButton1Down:Connect(function()
-                    TweenService:Create(ToggleHolder, TweenInfo.new(0.12, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {Size = UDim2.new(1, -6, 0, 34)}):Play()
-                end)
-                ToggleHolderButton.MouseButton1Up:Connect(function()
-                    TweenService:Create(ToggleHolder, TweenInfo.new(0.12, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {Size = UDim2.new(1, -6, 0, 34)}):Play()
-                end)
-                ToggleHolderButton.MouseButton1Click:Connect(function()
-                    if toggled then
-                        TweenService:Create(ToggleIn, TweenInfo.new(0.12, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {Position = UDim2.new(0, 2, 0, 1)}):Play()
-                        toggled = false
-                        pcall(function()
-                            togglecallback(toggled)
-                        end)
-                    else
-                        TweenService:Create(ToggleIn, TweenInfo.new(0.12, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {Position = UDim2.new(0, 20, 0, 1)}):Play()
-                        toggled = true
-                        pcall(function()
-                            togglecallback(toggled)
-                        end)
-                    end
-                end)
-                
-            end
 
             function TabFunctions:Slider(slidertitle, minvalue, maxvalue, callback)
                 local SliderHolder = Instance.new("Frame")
