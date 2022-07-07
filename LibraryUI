@@ -48,7 +48,7 @@ ScreenGui.Parent = Gui
 Frame.Parent = ScreenGui
 Frame.BackgroundColor3 = Color3.new(0,0,0)
 Frame.BorderColor3 = Color.Main
-Frame.Position = UDim2.new(0,-500,0,365)
+Frame.Position = UDim2.new(0,-9500,0,365)
 Frame.Size = UDim2.new(0,300,0,100)
 Frame.Active = true
 
@@ -79,7 +79,7 @@ TextButton12.TextWrapped = true
 
 TweenService:Create(Frame, TweenInfo.new(.7, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Position = UDim2.new(0,0,0,365)}):Play()
 wait(t)
-TweenService:Create(Frame, TweenInfo.new(.7, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Position = UDim2.new(0,-500,0,365)}):Play() 
+TweenService:Create(Frame, TweenInfo.new(.7, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Position = UDim2.new(0,-9500,0,365)}):Play() 
 wait(.7)
 ScreenGui:Destroy() 
 end
