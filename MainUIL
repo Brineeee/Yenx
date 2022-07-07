@@ -412,7 +412,7 @@ TweenService:Create(Main, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDir
 				end)
            end
 
-       	function TabFunctions:Toggle2(titlee, callback)
+       	function DiscordMech:Toggle2(titlee, callback)
             local Toggle = Instance.new("TextButton")
             local Title = Instance.new("TextLabel")
             local Toggle_2 = Instance.new("Frame")
