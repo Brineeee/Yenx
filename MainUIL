@@ -11,7 +11,7 @@ local Lib = {
     Core = Gui, 
     Size = UDim2.new(0,540,0,398),
     Drag = true, 
-    Page = true,
+    Page = false,
     Scroll = 0
 } 
 
