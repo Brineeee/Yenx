@@ -106,7 +106,7 @@ Tab1:Toggle("Toggle", false, function()
 
 end) 
 ```
-### Another Style of Toggld
+### Another Style of Toggle
 ```lua
 Tab1:Toggle2("Toggle 2", false, function() -- remove false and [ , ] if toggle doesn't work
 
@@ -158,6 +158,11 @@ end)
 ```
 ## Library
 ```lua
+TextColor = Color3.fromRGB(120,255,0)
+TitleColor = Color3.fromRGB(120,255,0)
+ImageColor = Color3.fromRGB(120,255,0)
+MainColor = Color3.fromRGB(120,255,0)
+ShadowColor = Color3.fromRGB(120,255,0)
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Brineeee/Yenx/main/MainUI"))()
 
 local win = Library:Window("Yenx")
