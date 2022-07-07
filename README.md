@@ -37,27 +37,43 @@ A new UI Library Made by mech#0945 / Yamete#2273
 - Added Seperator 
 - Added Line
 
-### Announcement > v1.4 
+### v1.5 Update
+- Update Dropdown
+- Can Clear Dropdown
+- Can Add Dropdown
+------
+- Fixed Notification that didn't show
+- Added Old Toggle
+- 2 Types of Toggle
+- Changeable Color
+- Tab Always show
+- Change Size to 600
+- Fixed Bugs
+
+### Announcement > v1.5 
 Soon Colorpicker will add on gui! 
 We will fixed Tween Title soon! 
 
 ## Color
-- added new color
+```lua
+TextColor = Color3.fromRGB(120,255,0)
+TitleColor = Color3.fromRGB(120,255,0)
+ImageColor = Color3.fromRGB(120,255,0)
+MainColor = Color3.fromRGB(120,255,0)
+ShadowColor = Color3.fromRGB(120,255,0)
+```
 
 ## Library
-- put it on your script
 ```lua
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Brineeee/Yenx/main/LibraryUI"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Brineeee/Yenx/main/MainUI"))()
 ```
 
 ## Window & Tween Title
-- IMPORTANT! window is important to ui lib works! 
 ```lua
 local win = Library:Window("Yenx")
 ```
 
 ## Tab
-- IMPORTANT! add tab so you can add button, etc.
 ```lua
 local Tab1 = win:Tab("Home")
 ```
@@ -78,7 +94,6 @@ Tab1:Line()
 ``` 
 
 ## Button
-- add button on tab
 ```lua
 Tab1:Button("Button", function() 
    print("Clicked!") 
@@ -86,15 +101,19 @@ end)
 ```
 
 ## Toggle
-- add toggle on tab
 ```lua
-Tab1:Toggle("Toggle", false, function() -- remove false and [ , ] if toggle doesn't work
+Tab1:Toggle("Toggle", false, function()
+
+end) 
+```
+### Another Style of Toggld
+```lua
+Tab1:Toggle2("Toggle 2", false, function() -- remove false and [ , ] if toggle doesn't work
 
 end) 
 ```
 
 ## Keybind
-- add keybind on tab
 ```lua
 Tab1:Keybind("Keybind", Enum.KeyCode.Z, function() -- Example : Remove Z near of KeyCode and Replace it with F. 
 
@@ -102,18 +121,22 @@ end)
 ```
 
 ## Dropdown
-- add dropdown on tab
 ```lua
 local list = {
    "Option 1", "Option 2", "Option 3"
 } 
-Tab1:Dropdown("Dropdown", list, function() 
+local Here = Tab1:Dropdown("Dropdown", list, function() 
 
 end) 
 ```
+```lua
+Here:Clear() 
+```
+```lua
+Here:Add() 
+```
 
 ## Textbox
-- add textbox on tab
 ```lua
 Tab1:Textbox("Textbox", "Type Here", function() 
 
@@ -134,9 +157,8 @@ Tab1:Button("Update Label", function()
 end)
 ```
 ## Library
-- for lazy copy this
 ```lua
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Brineeee/Yenx/main/LibraryUI"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Brineeee/Yenx/main/MainUI"))()
 
 local win = Library:Window("Yenx")
 local Tab1 = win:Tab("Home")
@@ -154,6 +176,10 @@ end)
 
 Tab1:Toggle("Toggle", function() 
     
+end) 
+
+Tab1:Toggle2("Toggle 2", false, function() 
+
 end) 
 
 Tab1:Textbox("Textbox", "Type Here", function()
