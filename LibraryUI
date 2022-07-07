@@ -43,7 +43,7 @@ local TextButton1 = Instance.new("TextLabel")
 local TextButton12 = Instance.new("TextLabel") 
 
 ScreenGui.Name = "Notification.html" 
-ScreenGui.Parent = Lib.Core
+ScreenGui.Parent = Gui
 
 Frame.Parent = ScreenGui
 Frame.BackgroundColor3 = Color3.new(0,0,0)
@@ -104,14 +104,14 @@ function Library:Window(title)
     local Cover = Instance.new("Frame")
 
     ui.Name = Lib.Name
-    ui.Parent = Lib.Core
+    ui.Parent = Gui
     ui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
     Main.Name = "Main"
     Main.Parent = ui
     Main.BackgroundColor3 = Color3.fromRGB(16, 16, 16)
     Main.BorderSizePixel = 0
-    Main.Position = UDim2.new(0, -500, 0, 11)
+    Main.Position = UDim2.new(0, -9500, 0, 11)
     Main.Size = Lib.Size
     Main.Active = true
     Main.Selectable = true
@@ -170,7 +170,7 @@ function Library:Window(title)
     Close.ImageColor3 = Color.Image
     Close.ScaleType = Enum.ScaleType.Crop
     Close.MouseButton1Click:connect(function()
-TweenService:Create(Main, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Position = UDim2.new(0, 900, 0, 11)}):Play()
+TweenService:Create(Main, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Position = UDim2.new(0, 9900, 0, 11)}):Play()
 wait(1.5)
         ui:Remove()
     end)
