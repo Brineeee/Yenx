@@ -417,7 +417,6 @@ TweenService:Create(Main, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDir
             local Title = Instance.new("TextLabel")
             local Toggle_2 = Instance.new("Frame")
             local Stroke = Instance.new('UIStroke')
-            value = true and false
 
             Toggle.Name = "Toggle"
             Toggle.Parent = Page
@@ -445,7 +444,7 @@ TweenService:Create(Main, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDir
             Toggle_2.Name = "Toggle"
             Toggle_2.Parent = Toggle
             Toggle_2.AnchorPoint = Vector2.new(1, 0.5)
-            Toggle_2.BackgroundColor3 = LibraryIS.FunctionColor
+            Toggle_2.BackgroundColor3 = Color.Main
             Toggle_2.BackgroundTransparency = 1.000
             Toggle_2.BorderSizePixel = 0
             Toggle_2.Position = UDim2.new(1, -8, 0.5, 0)
@@ -456,7 +455,7 @@ TweenService:Create(Main, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDir
             Stroke.Thickness = 2
             Stroke.Color = Color.Main
 
-            local toggled = value
+            local toggled = true and false
             if toggled then
             TweenService:Create(Toggle_2, TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{BackgroundTransparency = 0}, true):Play()
                 callback(toggled)
