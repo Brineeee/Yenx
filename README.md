@@ -50,7 +50,10 @@ A new UI Library Made by mech#0945 / Yamete#2273
 - Change Size to 600
 - Fixed Bugs
 
-### Announcement > v1.5 
+### v1.6 
+- Fixed UI That didn't show
+
+### Announcement 
 Soon Colorpicker will add on gui! 
 We will fixed Tween Title soon! 
 
@@ -65,7 +68,7 @@ ShadowColor = Color3.fromRGB(120,255,0)
 
 ## Library
 ```lua
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Brineeee/Yenx/main/MainUI"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Brineeee/Yenx/main/MainUIL"))()
 ```
 
 ## Window & Tween Title
@@ -163,7 +166,7 @@ TitleColor = Color3.fromRGB(120,255,0)
 ImageColor = Color3.fromRGB(120,255,0)
 MainColor = Color3.fromRGB(120,255,0)
 ShadowColor = Color3.fromRGB(120,255,0)
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Brineeee/Yenx/main/MainUI"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Brineeee/Yenx/main/MainUIL"))()
 
 local win = Library:Window("Yenx")
 local Tab1 = win:Tab("Home")
