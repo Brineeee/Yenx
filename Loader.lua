@@ -33,7 +33,7 @@ Frame.BorderColor3 = Color3.fromRGB(120,255,0)
 Frame.Position = UDim2.new(0,210,0,140)
 Frame.Size = UDim2.new(0,0,0,0)
 Frame.Active = true
-Frame.Draggable = false
+Frame.Draggable = true
 
 UserText.Parent = Frame
 UserText.BackgroundColor3 = Color3.fromRGB(0,0,0)
