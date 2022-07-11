@@ -30,7 +30,7 @@ ScreenGui.Parent = game.CoreGui
 Frame.Parent = ScreenGui
 Frame.BackgroundColor3 = Color3.new(0,0,0)
 Frame.BorderColor3 = Color3.fromRGB(120,255,0)
-Frame.Position = UDim2.new(0,210,0,140)
+Frame.Position = UDim2.new(0.5, 0, 0.5   , 0)
 Frame.Size = UDim2.new(0,0,0,0)
 Frame.Active = true
 Frame.Draggable = true
@@ -71,7 +71,9 @@ UserText1.TextSize = -9999
 UserText1.TextColor3 = Color3.fromRGB(120,255,0)
 UserText1.Visible = false
 
-TweenService:Create(Frame, TweenInfo.new(0.9, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {Size = UDim2.new(0.5,0.9,0.4)}):Play()
+TweenInfo.new(.9, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+            {Size = UDim2.new(0.5,0.9,0.4)}
+        ):Play()
 wait(.9) 
 UserText1.Visible = false 
 wait(0.1)
@@ -103,7 +105,9 @@ local function Count()
     wait(3)
     script.Parent.Text = "100%"
     wait(0.8)
-TweenService:Create(Frame, TweenInfo.new(0.9, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {Size = UDim2.new(0,0,0,0)}):Play()
+TweenInfo.new(.9, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+            {Size = UDim2.new(0,0,0)}
+        ):Play()
 UserText1.Visible = false
 UserText.Visible = false 
 UserText2.Visible = false 
